@@ -3,7 +3,6 @@ class Node:
         self.data = data
         self.link = link
 
-# a = Node("ABC")
 
 class LinkedList:
     def __init__(self):
@@ -23,11 +22,11 @@ class LinkedList:
         current = self.head
         result = ""
         while current is not None:
-            # print(current.data)
-            result = result + str(current.data) + " -> "
+            # result = result + str(current.data) + " -> "
+            result = result + f"{current.data} -> "
             current = current.link
         return  result + "END"
-        # return "Linked list!"
+
 ll = LinkedList()
 ll.append(8)
 ll.append(10)

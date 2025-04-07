@@ -35,7 +35,7 @@ class LinkedList:
             previous = current
             current = current.link
 
-    # def is_find(self, target):
+
     def search(self, target):
         current = self.head
         while current: #bug fix
@@ -45,7 +45,7 @@ class LinkedList:
                 current = current.link
         return  f"{target}은(는) 링크드 리스트 안에 존재하지 않습니다."
 
-
+    # 멤버 함수 만들기
     def __str__(self):
         current = self.head
         result = ""

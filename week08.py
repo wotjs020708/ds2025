@@ -1,3 +1,4 @@
+# BST
 def pre_order(node):
     if node is None:
         return
@@ -25,35 +26,54 @@ class TreeNode:
         self.data = None
         self.right = None
 
+def insert(root, value):
 
-# BST
-if __name__ == "__main__":
-    numbers = [10, 15, 8, 3, 9]
-    root = None
 
     node = TreeNode()
-    node.data = numbers[0] # 10
-    root = node
+    node.data = value
+    if root is None:
+        return  node
 
-    for number in numbers[1:]:
-        node = TreeNode()
-        node.data = number
+    current = root
 
-        current = root
+    while True:
+        if value < current.data:
+            if current.left is None:
+                current.left = node
+                break
+            current = current.left  # Move
+        else:
+            if current.right is None:
+                current.right = node
+                break
+            current = current.right  # Move
+    return  root
 
-        while True:
-            if number < current.data:
-               if current.left is None:
-                   current.left = node
-                   break
-               current = current.left # Move
-            else:
-                if current.right is None:
-                    current.right = node
-                    break
-                current = current.right # Move
 
+if __name__ == "__main__":
+    numbers = [10, 15, 8, 3, 9, 100, 7, 13]
+    root = None
+
+    for number in numbers:
+        root = insert(root, number)
 
 
     print("BST 구성 완료")
     post_order(root)
+
+    # find_number = int(input())
+    # current = root
+    # while True:
+    #     if find_number == current.data:
+    #         print(f"{find_number}을(를) 찾았습니다")
+    #         break
+    #     elif find_number < current.data:
+    #         if current.left is None:
+    #             print(f"{find_number}이(가) 존재하지 않습니다")
+    #             break
+    #         current = current.left
+    #     else:
+    #         if current.right is None:
+    #             print(f"{find_number}이(가) 존재하지 않습니다")
+    #             break
+    #         current = current.right

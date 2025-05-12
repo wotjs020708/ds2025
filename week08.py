@@ -26,8 +26,8 @@ class TreeNode:
         self.data = None
         self.right = None
 
-def search():
-    find_number = int(input("찾는 수는?"))
+def search(find_number):
+
     current = root
     while True:
         if find_number == current.data:
@@ -83,5 +83,6 @@ if __name__ == "__main__":
     print("BST 구성 완료")
     post_order(root)
     print()
-    search()
+    find_number = int(input("찾는 수는?"))
+    search(find_number)
 

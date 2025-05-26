@@ -19,7 +19,6 @@ def dfs(g, i, visited):
 def bfs(g, i, visited):
     pass
 
-
 visited_dfs = [False for _ in range(len(graph))]
 visited_bfs = [0 for _ in range(len(graph))]
 dfs(graph, 7, visited_dfs)
